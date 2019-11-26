@@ -14,7 +14,6 @@ class _ViewState extends State<View> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
             body: SafeArea(
               child: Stack(
@@ -23,7 +22,7 @@ class _ViewState extends State<View> {
                    Container(
                      height: double.infinity,
                      width: double.infinity,
-                     color: Colors.yellow[100],
+                     color: Colors.yellow[50],
                      ),
                      Positioned(
                        top: 50,
@@ -73,17 +72,39 @@ class _ViewState extends State<View> {
               ),
             ),
             Positioned(
-              top: 250,
+              top: 180,
               left: 30,
               right: 30,
               child: Container(
                 height: 350,
                 width: 450,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/gray.jpg'))
+                  image: DecorationImage(image: AssetImage('assets/nigeria.png'))
                 ),
               ),
-            )
+            ),
+            Positioned(
+              top: 480,
+              left: 30,
+              child: 
+              Chip(
+                backgroundColor: Colors.yellow[100],
+                label: Text('Plateau'),
+              ),
+              ),
+            Positioned(
+              top: 530,
+              left: 30,
+              child:Text('Welcome to plateau state. \nHome of peace and hapitality',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w200),),
+              ),
+              Positioned(
+                bottom: 30,
+                right: 15,
+                child: FloatingActionButton(onPressed: (){
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: Icon(Icons.arrow_back),),
+                )
            ],
          ),
        ),
